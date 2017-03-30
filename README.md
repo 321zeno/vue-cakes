@@ -1,6 +1,22 @@
-# cakes-app
+# Vue Cakes
 
 > A vuejs demo project
+
+
+## Clone this repo
+
+``` bash
+git clone https://github.com/321zeno/vue-cakes
+```
+
+## Declare your API endpoint
+
+Update `<my-project root>/src/endpoint.js`
+
+With the address of an actual API endpoint
+``` js
+module.exports = 'http://99.99.99.99:5000/api/cakes'
+```
 
 ## Build Setup
 
