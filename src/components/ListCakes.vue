@@ -30,8 +30,7 @@ import Axios from 'axios'
 export default {
   data () {
     return {
-      cakes: [],
-      originalCakes: []
+      cakes: []
     }
   },
 
@@ -43,7 +42,6 @@ export default {
     fetchCakesData: function () {
       Axios.get(url).then((response) => {
         this.cakes = response.data
-        this.originalCakes = this.cakes
       }, (response) => {
         this.$bus.$emit('alerts.error', {message: 'Could not fetch any cakes :('})
       })
