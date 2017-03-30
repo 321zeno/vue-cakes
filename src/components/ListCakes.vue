@@ -45,7 +45,7 @@ export default {
         this.cakes = response.data
         this.originalCakes = this.cakes
       }, (response) => {
-        // TODO show an error message
+        this.$bus.$emit('alerts.error', {message: 'Could not fetch any cakes :('})
       })
     }
   }

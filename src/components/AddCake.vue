@@ -37,6 +37,7 @@
 <script>
 import url from './../endpoint'
 import Axios from 'axios'
+import Vue from 'vue'
 
 Axios.defaults.headers.common.Accept = 'application/json'
 
@@ -51,8 +52,12 @@ export default {
       Axios.post(url, this.cake).then((response) => {
         // TODO show a success message
         this.$router.push({ name: 'list_cakes' })
+        let vm = this
+        Vue.nextTick(function () {
+          vm.$bus.$emit('alerts.info', {message: 'Nice cake.'})
+        })
       }, (response) => {
-        // show an error message
+        this.$bus.$emit('alerts.error', {message: 'Could not save this cake :(.'})
       })
     }
   }

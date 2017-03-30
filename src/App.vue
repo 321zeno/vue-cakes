@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    Cakes App
+    <alerts></alerts>
     <router-view></router-view>
   </div>
 </template>
