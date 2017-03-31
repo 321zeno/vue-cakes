@@ -1,6 +1,6 @@
 <template>
     <div id="alert">
-        <div v-if="alert" :class="alert.type">
+        <div v-if="alert" :class="`alert alert_${alert.type}`">
             {{ alert.message }}
         </div>
     </div>
@@ -38,3 +38,20 @@ export default{
   }
 }
 </script>
+
+<style>
+  .alert {
+    padding: 1.5em;
+    border-radius: 5px;
+  }
+
+  .alert_error {
+    border: 1px solid rgba(247,69,83,0.3);
+    background: rgba(247,69,83,0.1);
+  }
+
+  .alert_info {
+    border: 1px solid rgba(127,156,160,0.3);
+    background: rgba(127,156,160,0.1);
+  }
+</style>
